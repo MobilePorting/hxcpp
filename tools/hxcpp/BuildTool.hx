@@ -2415,7 +2415,7 @@ class BuildTool
       if (isArm64)
       {
          outDefines.set("HXCPP_ARM64","1");
-         outDefines.set("HXCPP_M64","1");
+         //outDefines.set("HXCPP_M64","1");
          outDefines.remove("HXCPP_32");
       }
       else if (in64)
