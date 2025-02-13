@@ -98,6 +98,8 @@
 
   <flag value ="-static-libstdc++" />
   <flag value ="-Wl,--allow-multiple-definition"/>
+  <flag value ="-Wl,-z,max-page-size=16384" if="HXCPP_PAGESIZE_16K"/>
+  <flag value ="-Wl,-z,max-page-size=4096" if="HXCPP_PAGESIZE_4K"/>
   <!-- This shows the android link line, which may be so long that it breaks the tool
      https://github.com/HaxeFoundation/hxcpp/pull/1091
      <flag value ="-v" />

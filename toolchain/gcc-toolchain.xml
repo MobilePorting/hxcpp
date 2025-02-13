@@ -32,6 +32,8 @@
      <ranlib name="${EXEPREFIX}-ranlib" if="EXEPREFIX" />
      <ranlib name="${HXCPP_RANLIB}" if="HXCPP_RANLIB" />
   </section>
+  <flag value ="-Wl,-z,max-page-size=16384" if="HXCPP_PAGESIZE_16K"/>
+  <flag value ="-Wl,-z,max-page-size=4096" if="HXCPP_PAGESIZE_4K"/>
 </linker>
 
 <set name="nostrip" value="1" if="debug"/>

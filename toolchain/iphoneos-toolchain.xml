@@ -108,6 +108,8 @@
   <flag value="-isysroot"/>
   <flag value="${DEVELOPER_DIR}/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS${IPHONE_VER}.sdk"/>
   <flag value="-Wl,-undefined,dynamic_lookup"/>
+  <flag value ="-Wl,-z,max-page-size=16384" if="HXCPP_PAGESIZE_16K"/>
+  <flag value ="-Wl,-z,max-page-size=4096" if="HXCPP_PAGESIZE_4K"/>
   <flag value="-fpic"/>
   <flag value="-fPIC"/>
   <flag value="-fvisibility=hidden"/>
