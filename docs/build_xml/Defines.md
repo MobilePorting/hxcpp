@@ -63,14 +63,13 @@ Defines affecting target architecture.
 | *HXCPP_ARM64*           | Compile arm-based devices for 64 bits |
 | *HXCPP_ARMV7*           | Compile arm-based devices for armv7 |
 | *HXCPP_ARMV7S*          | Compile arm-based devices for armv7s |
-| *HXCPP_LINUX_ARMV7*     | Run on a linux ARMv7 device |
-| *HXCPP_LINUX_ARM64*     | Run on a linux ARM64 device |
 | *winrt*                 | Compile for windowsRt/windows UWP |
 | *android*               | Compile for android |
 | *PLATFORM*              | Specify the android platform for NDK compilation |
 | *ANDROID_NDK_ROOT*      | Specify the location of the android NDK toolchain |
 | *ANDROID_NDK_DIR*       | Specify the search location for finding the android NDK toolchain |
 | *HXCPP_X86*             | Compile android for x86 architecture |
+| *HXCPP_X86_64*          | Compile android for x86_64 architecture |
 | *iphoneos*              | Compile for iphone iOS |
 | *iphonesim*             | Compile for iphone simulator |
 | *appletvos*             | Compile for apple tvOS |

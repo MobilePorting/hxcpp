@@ -134,6 +134,7 @@ class Builder
                case "windows":
                   validArchs.set("m32", ["-D"+target, "-DHXCPP_M32"].concat(staticFlags) );
                   validArchs.set("m64", ["-D"+target, "-DHXCPP_M64"].concat(staticFlags) );
+                  validArchs.set("armv7", ["-D"+target, "-DHXCPP_ARMV7"].concat(staticFlags) );
                   validArchs.set("arm64", ["-D"+target, "-DHXCPP_ARM64"].concat(staticFlags) );
 
                case "msvc":
@@ -141,22 +142,22 @@ class Builder
                   {
                      validArchs.set("2013m32", ["-D"+target, "-DHXCPP_M32", "HXCPP_MSVC_VER=120"].concat(staticFlags) );
                      validArchs.set("2015m32", ["-D"+target, "-DHXCPP_M32", "HXCPP_MSVC_VER=140"].concat(staticFlags) );
-                     if (wantWindows64())
-                     {
-                        validArchs.set("2013m64", ["-D"+target, "-DHXCPP_M64", "HXCPP_MSVC_VER=120"].concat(staticFlags) );
-                        validArchs.set("2015m64", ["-D"+target, "-DHXCPP_M64", "HXCPP_MSVC_VER=140"].concat(staticFlags) );
-                     }
+                     validArchs.set("2013m64", ["-D"+target, "-DHXCPP_M64", "HXCPP_MSVC_VER=120"].concat(staticFlags) );
+                     validArchs.set("2015m64", ["-D"+target, "-DHXCPP_M64", "HXCPP_MSVC_VER=140"].concat(staticFlags) );
                   }
                   else
                   {
                      validArchs.set("m32", ["-D"+target, "-DHXCPP_M32"] );
-                     if (wantWindows64())
-                        validArchs.set("m64", ["-D"+target, "-DHXCPP_M64"] );
+                     validArchs.set("m64", ["-D"+target, "-DHXCPP_M64"] );
+                     validArchs.set("armv7", ["-D"+target, "-DHXCPP_ARMV7"] );
+                     validArchs.set("arm64", ["-D"+target, "-DHXCPP_ARM64"] );
                   }
 
                case "mingw":
                   validArchs.set("m32", ["-Dwindows", "-DHXCPP_MINGW", "-DHXCPP_M32"].concat(staticFlags) );
                   validArchs.set("m64", ["-Dwindows", "-DHXCPP_MINGW", "-DHXCPP_M64"].concat(staticFlags) );
+                  validArchs.set("armv7", ["-Dwindows", "-DHXCPP_MINGW", "-DHXCPP_ARMV7"].concat(staticFlags) );
+                  validArchs.set("arm64", ["-Dwindows", "-DHXCPP_MINGW", "-DHXCPP_ARM64"].concat(staticFlags) );
 
                case "ios", "ioslegacy":
                   validArchs.set("armv6", ["-Diphoneos"].concat(staticFlags) );
