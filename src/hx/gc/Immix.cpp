@@ -3652,7 +3652,7 @@ public:
          if (!result)
          {
             GCLOG("Memory exhausted.\n");
-            #if (!defined(HXCPP_M64) || !defined(HXCPP_ARM64))
+            #if !defined(HXCPP_M64) && !defined(HXCPP_ARM64)
             GCLOG(" try 64 bit build.\n");
             #endif
             #ifndef HXCPP_GC_BIG_BLOCKS
