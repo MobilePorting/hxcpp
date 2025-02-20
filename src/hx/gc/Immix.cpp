@@ -3652,7 +3652,7 @@ public:
          if (!result)
          {
             GCLOG("Memory exhausted.\n");
-            #ifndef HXCPP_M64
+            #if (!defined(HXCPP_M64) || !defined(HXCPP_ARM64))
             GCLOG(" try 64 bit build.\n");
             #endif
             #ifndef HXCPP_GC_BIG_BLOCKS
@@ -6692,7 +6692,7 @@ void *InternalNew(int inSize,bool inIsObject)
       }
       else
       {
-         #if defined(HXCPP_GC_MOVING) && defined(HXCPP_M64)
+         #if defined(HXCPP_GC_MOVING) && (defined(HXCPP_M64)||defined(HXCPP_ARM64))
          if (inSize<8)
             return tla->CallAlloc(8,0);
          #endif
@@ -6802,7 +6802,7 @@ void *InternalRealloc(int inFromSize, void *inData,int inSize, bool inExpand)
    {
       LocalAllocator *tla = GetLocalAlloc();
 
-      #if defined(HXCPP_GC_MOVING) && defined(HXCPP_M64)
+      #if defined(HXCPP_GC_MOVING) && (defined(HXCPP_M64)||defined(HXCPP_ARM64))
       if (inSize<8)
           new_data =  tla->CallAlloc(8,0);
       else
@@ -7123,7 +7123,7 @@ unsigned int __hxcpp_obj_hash(Dynamic inObj)
 {
    if (!inObj.mPtr) return 0;
    hx::Object *obj = inObj.mPtr;
-   #if defined(HXCPP_M64)
+   #if (defined(HXCPP_M64)||defined(HXCPP_ARM64))
    size_t h64 = (size_t)obj;
    return (unsigned int)(h64>>2) ^ (unsigned int)(h64>>32);
    #else

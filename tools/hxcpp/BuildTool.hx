@@ -2098,7 +2098,7 @@ class BuildTool
             defines.set("linux","linux");
             defines.set("toolchain","linux");
             defines.set("xcompile","1");
-            defines.set("BINDIR", m64 ? "Linux64":"Linux");
+            defines.set("BINDIR", arm64 ? "LinuxArm64" : armv7 ? "LinuxArm" : m64 ? "Linux64" : "Linux");
          }
          else
          {
