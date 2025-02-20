@@ -29,8 +29,6 @@
 <set name="SUBSYSTEMWINDOWS" value="1" if="no_console" unless="HXCPP_DEBUGGER" />
 <set name="SUBSYSTEMCONSOLE" value="1" unless="SUBSYSTEMWINDOWS" />
 
-<unset name="HXCPP_M64" if="HXCPP_ARM64 || HXCPP_ARMV7" />
-
 <section if="HXCPP_WINXP_COMPAT">
    <set name="SUBSYSTEM_VER" value=",5.01" unless="HXCPP_M64" />
    <set name="SUBSYSTEM_VER" value=",5.02" if="HXCPP_M64" />
